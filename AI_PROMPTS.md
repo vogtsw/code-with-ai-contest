@@ -1,7 +1,7 @@
 # Agent 交互日志
 
 **团队名称：** AI_Coders
-**成员名单：** 成员1, 成员2, 成员3
+**成员名单：** 吴冕, 戚胜宇, 安琪
 **使用的 AI Coding Agent 工具：** Claude Code / SOLO AI Assistant
 
 ---

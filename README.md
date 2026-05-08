@@ -122,7 +122,7 @@ python -m pytest test_app.py -v
 ## 👥 团队信息
 
 **团队名称**: AI_Coders
-**成员**: 成员1, 成员2, 成员3
+**成员**: 吴冕, 戚胜宇, 安琪
 **使用的AI工具**: Claude Code / SOLO AI Assistant
 
 ---
