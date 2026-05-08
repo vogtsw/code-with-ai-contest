@@ -283,3 +283,28 @@ def test_filter_by_band(self):
 
 **附件日志文件名:** 无附件 (直接在文档中记录)
 **简要说明:** 本日志记录了从项目初始化到完成的完整 AI 交互过程,包括需求描述、提示词、代码生成和问题修复全过程。
+
+---
+
+## 补充交付检查记录（2026-05-08）
+
+### 用户补充要求
+
+> 检查当前 GitHub 提交是否满足比赛硬核交付物；重点确认截图、README、AI_PROMPTS、requirements、tag；分析上游 reviewer 分支是否可能影响验收；缺失项直接补齐。
+
+### Agent 实际操作记录
+
+1. 克隆并检查 `https://github.com/vogtsw/code-with-ai-contest.git`，同时拉取上游 `https://github.com/besa-2026/code-with-ai-contest.git` 的 `main` 与 `reviewer` 分支。
+2. 发现主分支已有 `app.py`、`requirements.txt`、`README.md`、`AI_PROMPTS.md` 和数据文件，但缺少 Web 应用运行截图。
+3. 检查上游 `reviewer` 分支，发现其中包含 `scripts/evaluate_tags.py`，该脚本会检查 `basic-done`、`advanced-done` tag、`app.py` 以及 PROMPT/LOG/AGENT 类日志文件，说明评测很可能会按 tag 与交付物存在性进行自动筛查。
+4. 使用本地虚拟环境安装依赖并执行 `python -m pytest test_app.py -v`，确认 16 个单元测试全部通过。
+5. 启动 Streamlit 应用并通过浏览器自动化生成 3 张真实运行截图：
+   - `screenshots/dashboard-2d-overview.png`
+   - `screenshots/dashboard-3d-map.png`
+   - `screenshots/dashboard-filtered-n78.png`
+6. 更新 README，加入截图展示、项目结构和交付清单。
+7. 修复 Streamlit 新版本关于 `use_container_width` 的弃用警告，并在筛选结果为空时给出提示，避免地图视图收到空数据。
+
+### 透明性说明
+
+本次补充检查与截图补齐由 OpenAI Codex coding agent 完成。本文档只记录真实发生的 AI 辅助过程，不伪造模型名称、agent 来源或不存在的交互记录。

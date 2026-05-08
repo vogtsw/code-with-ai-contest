@@ -83,6 +83,16 @@ python -m pytest test_app.py -v
 4. **统计图表**: 柱状图、饼图、直方图、散点图
 5. **数据表格**: 可排序的原始数据预览
 
+### 运行截图
+
+以下截图均来自本项目通过 `streamlit run app.py` 启动后的真实页面：
+
+![2D 信号地图与侧边栏筛选](screenshots/dashboard-2d-overview.png)
+
+![3D 柱状地图](screenshots/dashboard-3d-map.png)
+
+![侧边栏筛选 n78 频段后的联动结果](screenshots/dashboard-filtered-n78.png)
+
 ---
 
 ## 📁 项目结构
@@ -93,7 +103,11 @@ python -m pytest test_app.py -v
 ├── test_app.py            # 单元测试
 ├── requirements.txt       # 依赖列表
 ├── README.md              # 项目文档
-├── AI_PROMPTS.md         # AI交互日志
+├── AI_PROMPTS.md          # AI交互日志
+├── screenshots/           # Web应用运行截图
+│   ├── dashboard-2d-overview.png
+│   ├── dashboard-3d-map.png
+│   └── dashboard-filtered-n78.png
 └── data/
     └── signal_samples.csv # 5G信号数据集
 ```
@@ -115,6 +129,7 @@ python -m pytest test_app.py -v
 - [x] 基础关卡完成 ✅
 - [x] 进阶关卡完成 ✅
 - [x] 单元测试覆盖 ✅
+- [x] Web应用运行截图 ✅
 - [x] AI交互日志 ✅
 
 ---
@@ -123,7 +138,7 @@ python -m pytest test_app.py -v
 
 **团队名称**: AI_Coders
 **成员**: 吴冕, 戚胜宇, 安琪
-**使用的AI工具**: Claude Code / SOLO AI Assistant
+**使用的AI工具**: Claude Code / SOLO AI Assistant；最终交付检查与截图补齐使用 OpenAI Codex coding agent
 
 ---
 

@@ -74,7 +74,11 @@ def main():
         (data['TerminalType'].isin(selected_terminals)) &
         (data['Download_Mbps'] >= speed_range[0]) &
         (data['Download_Mbps'] <= speed_range[1])
-    ]
+    ].copy()
+
+    if filtered_data.empty:
+        st.warning("当前筛选条件下没有匹配数据，请放宽侧边栏筛选条件。")
+        st.stop()
 
     st.markdown("---")
     col1, col2, col3, col4 = st.columns(4)
@@ -167,7 +171,7 @@ def main():
             color_discrete_sequence=px.colors.qualitative.Set2
         )
         fig_band.update_layout(showlegend=False)
-        st.plotly_chart(fig_band, use_container_width=True)
+        st.plotly_chart(fig_band, width="stretch")
 
     with chart_col2:
         st.markdown("**终端类型占比**")
@@ -178,7 +182,7 @@ def main():
             title="终端类型占比",
             color_discrete_sequence=px.colors.qualitative.Pastel
         )
-        st.plotly_chart(fig_terminal, use_container_width=True)
+        st.plotly_chart(fig_terminal, width="stretch")
 
     st.markdown("---")
     st.markdown("### 📈 信号质量分析")
@@ -196,7 +200,7 @@ def main():
         )
         fig_rsrp.add_vline(x=-90, line_dash="dash", line_color="green", annotation_text="优秀 > -90")
         fig_rsrp.add_vline(x=-110, line_dash="dash", line_color="red", annotation_text="较差 < -110")
-        st.plotly_chart(fig_rsrp, use_container_width=True)
+        st.plotly_chart(fig_rsrp, width="stretch")
 
     with analysis_col2:
         st.markdown("**SINR vs RSRP 散点图**")
@@ -209,13 +213,13 @@ def main():
             title="信号质量相关性分析",
             color_discrete_sequence=px.colors.qualitative.Set1
         )
-        st.plotly_chart(fig_scatter, use_container_width=True)
+        st.plotly_chart(fig_scatter, width="stretch")
 
     st.markdown("---")
     st.markdown("### 📋 数据预览")
     st.dataframe(
         filtered_data.sort_values('RSRP_dBm', ascending=False),
-        use_container_width=True,
+        width="stretch",
         height=300
     )
 
