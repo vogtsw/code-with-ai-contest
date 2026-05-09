@@ -2,13 +2,13 @@
 
 **团队名称：** AI_Coders
 **成员名单：** 吴冕, 戚胜宇, 安琪
-**使用的 AI Coding Agent 工具：** Claude Code / SOLO AI Assistant
+**使用的 AI Coding Agent 工具：** 自己开发的 AI Assistant
 
 ---
 
 ## 🤖 交互记录导出说明
 
-本次项目通过 AI Coding Agent (Claude Code / SOLO) 辅助开发,以下是核心开发过程中的提示词和交互记录。
+本次项目通过 AI Coding Agent 辅助开发,以下是核心开发过程中的提示词和交互记录。
 
 ---
 
