@@ -137,7 +137,7 @@ python -m pytest test_app.py -v
 ## 👥 团队信息
 
 **团队名称**: AI_Coders
-**成员**: 吴冕, 戚胜宇, 安琪
+
 **使用的AI工具**: Claude Code / SOLO AI Assistant；最终交付检查与截图补齐使用 OpenAI Codex coding agent
 
 ---
